@@ -16,37 +16,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/default_view_margin"
     tools:context="com.example.glass.voicerecognitionsample.MainActivity">
 
-  <ImageView
+  <TextView
+      android:id="@+id/headerTitle"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:background="@drawable/headerbox"
+      android:gravity="center_vertical"
+      android:paddingStart="20dp"
+      android:text="Ligaments, joint capsule and menisci"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/bodyTitle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="Finding*"
+      android:textSize="20sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@+id/imageView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="@+id/radioGroup2"
+      app:layout_constraintTop_toBottomOf="@+id/headerTitle"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <RadioGroup
+      android:id="@+id/radioGroup2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      app:layout_constraintBottom_toTopOf="@+id/imageView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bodyTitle">
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="284dp"
+        android:layout_height="wrap_content"
+        android:text="Normal"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/bodyTitle"
+        tools:layout_editor_absoluteX="268dp" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finding"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+  </RadioGroup>
+
+
+  <ImageView
+      android:id="@+id/imageView"
+      android:layout_width="77dp"
+      android:layout_height="71dp"
       android:alpha="0.3"
       android:contentDescription="Background image"
       android:src="@drawable/ic_launcher_foreground"
       app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
-  <TextView
-      android:id="@+id/instruction"
-      style="@style/HeaderText"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:text="@string/voice_instruction"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintLeft_toLeftOf="parent"
-      app:layout_constraintRight_toRightOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/results" />
+      app:layout_constraintStart_toStartOf="parent" />
 
   <TextView
       android:id="@+id/results"
       style="@style/VoiceResultsText"
-      android:layout_width="0dp"
+      android:layout_width="wrap_content"
       android:layout_height="0dp"
-      app:layout_constraintBottom_toTopOf="@id/instruction"
+      app:layout_constraintBottom_toTopOf="@+id/imageView"
       app:layout_constraintLeft_toLeftOf="parent"
       app:layout_constraintRight_toRightOf="parent"
       app:layout_constraintTop_toTopOf="parent" />

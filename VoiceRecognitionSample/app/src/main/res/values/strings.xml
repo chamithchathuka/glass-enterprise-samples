@@ -11,6 +11,6 @@
  limitations under the License.
 -->
 <resources>
-  <string name="app_name">Voice Recognition Sample</string>
-  <string name="voice_instruction">Tap to start voice recognition</string>
+    <string name="app_name">Voice Recognition Sample</string>
+    <string name="voice_instruction">Tap to start voice recognition</string>
 </resources>
